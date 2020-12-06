@@ -1,9 +1,11 @@
 const cryptoRandomString = require('crypto-random-string');
 
 var express = require('express');
+const { ENETRESET } = require('constants');
 var app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
+
 
 app.use(express.static('public'))
 app.use('/overlay/:id', express.static('public'))
@@ -70,6 +72,7 @@ io.on('connection', (socket) => {
     socket.emit('generate room', { id: id });
   });
 });
+
 
 http.listen(3000, () => {
   console.log('listening on *:3000');

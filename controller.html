@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta charset="UTF-8">
   <title>Versus Overlay Controls</title>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -22,6 +23,7 @@
       <button id="show" class="controlButton">Show</button>
       <button id="hide" class="controlButton">Hide</button>
     </div>
+
     <div id="inputs">
       <form action="">
         <div id="p1Inputs" class="playerInputs">
@@ -35,11 +37,20 @@
           <input id="p2Score" class="score" type="text" autocomplete="off" placeholder="Score" />
         </div>
         <button class="submitButton">Update</button>
+        <span id='changedInfo'></span>
       </form>
+        <button id="swap">Swap Players</button>
     </div>
   </div>
   <div id="instructions">
-    <a href="viewer" target="_blank">viewer</a>
+    <h1>Instructions</h1>
+    <h2>OBS</h2>
+    <p>
+      Create a new Browser Source with the following settings:</br>
+      URL: <a id="viewer" href="viewer" target="_blank">viewer</a></br>
+      Width: 1280</br>
+      Hight: 720</br>
+    </p>
   </div>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

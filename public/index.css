@@ -13,16 +13,20 @@ body#viewer {
   overflow: hidden;
 }
 
-
 #instructions {
+  background: rgb(170, 170, 170);
+  font-size: 16px;
   margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
+  padding: 10px;
+  width: 500px;
 }
-
 
 #controls {
   background: rgb(170, 170, 170);
-  padding: 15px;
+  padding: 10px;
   margin-top: 250px;
   margin-left: auto;
   margin-right: auto;
@@ -39,7 +43,7 @@ body#viewer {
   cursor: default;
   background: rgb(130, 224, 255);
   border: none;
-  margin: 10px 10px 10px 10px;
+  margin: 0px 10px 10px 10px;
   padding: 10px;
 }
 
@@ -61,8 +65,29 @@ body#viewer {
 .submitButton {
   margin-top: 10px;
   position: relative;
-  left: 50%;
+  left: 64%;
   transform: translate(-50%, 0%);
+}
+
+#swap {
+  position: relative;
+  height: 42px;
+  margin-left: 10px;
+  width: 60px;
+}
+
+#changedInfo {
+  position: relative;
+  left: 0%;
+  font-weight: bold;
+}
+
+.pending {
+  color: #fadb2d;
+}
+
+.applied {
+  color: #009607;
 }
 
 .selected {
