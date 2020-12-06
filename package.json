@@ -1,0 +1,9 @@
+{
+  "name": "vs-overlay",
+  "version": "0.0.1",
+  "description": "Stream overlay for versus games",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.3"
+  }
+}

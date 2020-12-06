@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Versus Overlay Controls</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+</head>
+
+<body>
+  <div class="scaleable-wrapper" id="scaleable-wrapper">
+    <div id="players" class="topOverlay">
+      <span id="p1Name"></span>
+      <span id="p1Score"></span>
+      <span id="p2Score"></span>
+      <span id="p2Name"></span>
+    </div>
+    <span id="previewTitle">Preview</span>
+  </div>
+  <div id="controls">
+    <div id="controlButtons">
+      <button id="show" class="controlButton">Show</button>
+      <button id="hide" class="controlButton">Hide</button>
+    </div>
+    <div id="inputs">
+      <form action="">
+        <div id="p1Inputs" class="playerInputs">
+          <label>Player 1</label>
+          <input id="p1Name" class="name" type="text" autocomplete="off" placeholder="Name" />
+          <input id="p1Score" class="score" type="text" autocomplete="off" placeholder="Score" />
+        </div>
+        <div id="p2Inputs" class="playerInputs">
+          <label>Player 2</label>
+          <input id="p2Name" class="name" type="text" autocomplete="off" placeholder="Name" />
+          <input id="p2Score" class="score" type="text" autocomplete="off" placeholder="Score" />
+        </div>
+        <button class="submitButton">Update</button>
+      </form>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="viewer.js"></script>
+  <script src="controller.js"></script>
+  <script src="scale.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #303030;
+  font: 12px Helvetica, Arial;
+  margin: 0;
+}
+
+#controls {
+  background: rgb(170, 170, 170);
+  padding: 15px;
+  margin-top: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 400px;
+}
+
+#controlButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.controlButton {
+  cursor: default;
+  background: rgb(130, 224, 255);
+  border: none;
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+#inputs {
+  display: flex;
+  justify-content: center;
+}
+
+.playerInputs {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%); 
+}
+
+.score {
+  width: 50px;
+}
+
+.submitButton {
+  margin-top: 10px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.selected {
+  font-weight: bold;
+}
+
+.scaleable-wrapper {
+  top: 0;
+  left: 0;
+  resize: both;
+  position: fixed;
+  background: #666;
+  width: 100%;
+  height: 200px;
+}
+
+#previewTitle {
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  color: #e6a800;
+}
+
+.topOverlay {
+  height: 41px;
+  width: 1280px;
+  position: fixed;
+  z-index: 1;
+  top: -41px;
+  left: 0;
+  background-image: url(tekken-versus-overlay.png);
+  overflow: hidden;
+  transition: top 0.4s;
+  transform-origin: left top;
+}
+
+.topOverlay span {
+  font-size: 25px;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 4px;
+  position: absolute;
+  color: #ebebeb;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+#players span#p1Name {
+  left: 190px;
+}
+
+#players span#p1Score {
+  left: 525px;
+}
+
+#players span#p2Name {
+  right: 190px;
+}
+
+#players span#p2Score {
+  right: 525px;
+}
