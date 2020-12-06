@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 
-<body>
+<body id="controller">
   <div class="scaleable-wrapper" id="scaleable-wrapper">
     <div id="players" class="topOverlay">
       <span id="p1Name"></span>
@@ -38,9 +38,13 @@
       </form>
     </div>
   </div>
+  <div id="instructions">
+    <a href="viewer" target="_blank">viewer</a>
+  </div>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="connect.js"></script>
   <script src="viewer.js"></script>
   <script src="controller.js"></script>
   <script src="scale.js"></script>

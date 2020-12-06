@@ -31,6 +31,6 @@ doResize(null, starterData);
 }
 resizeWrapper();
 
-$( window ).resize(function() {
+$( window ).resize(function () {
   resizeWrapper();
 });

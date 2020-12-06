@@ -1,15 +1,12 @@
 $(function () {
-  var socket = io();
-  socket.on('show players', function (data) {
+  socket.on('show players', function () {
     showPlayers();
-    console.log('show players');
   });
-  socket.on('hide players', function (data) {
+  socket.on('hide players', function () {
     hidePlayers();
-    console.log('hide players');
   });
   socket.on('update players', function (data) {
-    updatePlayers(data);
+    updatePlayers(data.players);
     console.log('update players:', data);
   });
 });

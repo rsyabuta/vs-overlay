@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Stream overlay for versus games",
   "dependencies": {
+    "crypto-random-string": "^3.3.0",
     "express": "^4.17.1",
     "socket.io": "^3.0.3"
   }

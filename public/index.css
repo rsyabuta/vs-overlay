@@ -8,10 +8,22 @@ body {
   margin: 0;
 }
 
+body#viewer {
+  background-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+
+#instructions {
+  margin-top: 50px;
+  position: relative;
+}
+
+
 #controls {
   background: rgb(170, 170, 170);
   padding: 15px;
-  margin-top: 300px;
+  margin-top: 250px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -39,7 +51,7 @@ body {
 .playerInputs {
   position: relative;
   left: 50%;
-  transform: translate(-50%, 0%); 
+  transform: translate(-50%, 0%);
 }
 
 .score {

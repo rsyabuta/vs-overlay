@@ -6,17 +6,17 @@
   <link rel="stylesheet" href="index.css">
 </head>
 
-<body id="viewer">
-  <div id="players" class="topOverlay">
-    <span id="p1Name"></span>
-    <span id="p1Score"></span>
-    <span id="p2Score"></span>
-    <span id="p2Name"></span>
-  </div>
+<body>
+  <form action="">
+    <input id="overlayID" class="id" type="text" autocomplete="off" placeholder="Overlay ID" />
+    <button>Join Overlay</button>
+  </form>
+  <button id="generate">Generate Overlay</button>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="connect.js"></script>
-  <script src="viewer.js"></script>
+  <script src="generate.js"></script>
 </body>
 
 </html>
