@@ -17,7 +17,8 @@ async function getParticipants(id) {
     });
     return results;
   } catch(error) {
-    console.error(error);
+    console.error(error.config.url);
+    console.error(error.response.status);
   }
   return false;
 }

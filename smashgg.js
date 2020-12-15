@@ -43,7 +43,12 @@ async function getPlayersFromPhaseGroup(id) {
   let variables = { id: id, page: 1, perPage: 100 };
   let players = [];
   const resp = await runQuery(query, variables);
+  try {
   players = players.concat(extractPlayerNames(resp));
+  } catch(error) {
+    console.error(error)
+    return [];
+  }
   for (i = 1; i < resp.phaseGroup.seeds.pageInfo.totalPages; i++) {
     variables.page = i;
     resp = await runQuery(query, variables);
