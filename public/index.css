@@ -87,11 +87,17 @@ body#viewer {
 }
 
 .increment {
-  user-select: none;
+  cursor: pointer;
 }
 
 .decrement {
-  user-select: none;
+  
+  cursor: pointer;
+}
+
+.zero {
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .updateControls {

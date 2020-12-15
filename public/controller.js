@@ -60,6 +60,11 @@ $(function () {
     $(this).siblings('.score').change()
   });
 
+  $('.zero').click(function () {
+    $(this).siblings('.score').val(0);
+    $(this).siblings('.score').change()
+  });
+
   $('.urlSubmit').click(function () {
     var data = {}
     var {service, id} = parseBracketURL($('#urlInput').val());
