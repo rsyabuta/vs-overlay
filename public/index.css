@@ -40,14 +40,14 @@ body#viewer {
 }
 
 .grid {
-  max-width: 810px;
+  max-width: 910px;
   margin-left: auto;
   margin-right: auto; 
 }
 
 .grid-item {
   padding: 10px;
-  width: 400px;
+  width: 450px;
   margin-bottom: 10px;
   float: left;
 }
@@ -67,6 +67,17 @@ body#viewer {
   border: none;
   margin: 0px 10px 10px 10px;
   border-radius: 0.3rem;
+}
+
+.playerControls {
+  display: flex;
+  justify-content: center;
+}
+
+#swap {
+  border: 1px solid transparent;
+  margin-left: 10px;
+  width: 60px;
 }
 
 #inputs {
@@ -174,7 +185,7 @@ body#viewer {
   margin-top: 10px;
   margin-bottom: 10px;
   background-image: url(tekken7-preview.png);
-  width: 800px;
+  width: 910px;
   height: 100px;
   border-radius: 0.3rem;
 }

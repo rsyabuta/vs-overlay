@@ -33,29 +33,33 @@
 
       <div id="inputs">
         <form action="">
-          <div class="inputs">
-            <div id="p1Inputs" class="playerInputs">
-              <label>Player 1</label>
-              <input id="p1Name" class="name" type="text" autocomplete="off" placeholder="Name" />
-              <input id="p1Score" class="score" type="text" autocomplete="off" placeholder="Score" />
-              <span id="p1Increment" class="increment">➕</span>
-              <span id="p1Decrement" class="decrement">➖</span>
-              <span id="p1Zero" class="zero">0</span>
+          <div class="playerControls">
+            <div class="inputs">
+              <div id="p1Inputs" class="playerInputs">
+                <label>Player 1</label>
+                <input id="p1Name" class="name" type="text" autocomplete="off" placeholder="Name" />
+                <input id="p1Score" class="score" type="text" autocomplete="off" placeholder="Score" />
+                <span id="p1Increment" class="increment">➕</span>
+                <span id="p1Decrement" class="decrement">➖</span>
+                <span id="p1Zero" class="zero">0</span>
+              </div>
+              <div id="p2Inputs" class="playerInputs">
+                <label>Player 2</label>
+                <input id="p2Name" class="name" type="text" autocomplete="off" placeholder="Name" />
+                <input id="p2Score" class="score" type="text" autocomplete="off" placeholder="Score" />
+                <span id="p2Increment" class="increment">➕</span>
+                <span id="p2Decrement" class="decrement">➖</span>
+                <span id="p2Zero" class="zero">0</span>
+              </div>
             </div>
-            <div id="p2Inputs" class="playerInputs">
-              <label>Player 2</label>
-              <input id="p2Name" class="name" type="text" autocomplete="off" placeholder="Name" />
-              <input id="p2Score" class="score" type="text" autocomplete="off" placeholder="Score" />
-              <span id="p2Increment" class="increment">➕</span>
-              <span id="p2Decrement" class="decrement">➖</span>
-              <span id="p2Zero" class="zero">0</span>
+            <div class="swap">
+              <button id="swap" class="btn-warning btn-sm" type="button">Swap Players</button>
             </div>
           </div>
           <div class="updateControls">
-            <button id="swap" class="btn btn-warning" type="button">Swap Players</button>
             <button class="btn btn-primary submitButton">Update</button>
-          </div>
           <span id='changedInfo' class='applied'>✅ Applied</span>
+          </div>
         </form>
       </div>
     </div>
