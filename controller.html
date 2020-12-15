@@ -3,12 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
   <title>Versus Overlay Controls</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 
 <body id="controller">
+  <div id="logo">
+    <img src="versus-overlay-logo.png">
+  </div>
   <div class="scaleable-wrapper" id="scaleable-wrapper">
     <div id="players" class="topOverlay">
       <span id="p1Name"></span>
@@ -18,43 +23,103 @@
     </div>
     <span id="previewTitle">Preview</span>
   </div>
-  <div id="controls">
-    <div id="controlButtons">
-      <button id="show" class="controlButton">Show</button>
-      <button id="hide" class="controlButton">Hide</button>
+
+  <div class="grid">
+    <div id="controls" class="grid-item">
+      <div id="controlButtons">
+        <button id="show" class="btn btn-success controlButton">Show</button>
+        <button id="hide" class="btn btn-danger controlButton">Hide</button>
+      </div>
+
+      <div id="inputs">
+        <form action="">
+          <div class="inputs">
+            <div id="p1Inputs" class="playerInputs">
+              <label>Player 1</label>
+              <input id="p1Name" class="name" type="text" autocomplete="off" placeholder="Name" />
+              <input id="p1Score" class="score" type="text" autocomplete="off" placeholder="Score" />
+              <span id="p1Increment" class="increment">➕</span>
+              <span id="p1Decrement" class="decrement">➖</span>
+              <span id="p1Zero" class="zero">0</span>
+            </div>
+            <div id="p2Inputs" class="playerInputs">
+              <label>Player 2</label>
+              <input id="p2Name" class="name" type="text" autocomplete="off" placeholder="Name" />
+              <input id="p2Score" class="score" type="text" autocomplete="off" placeholder="Score" />
+              <span id="p2Increment" class="increment">➕</span>
+              <span id="p2Decrement" class="decrement">➖</span>
+              <span id="p2Zero" class="zero">0</span>
+            </div>
+          </div>
+          <div class="updateControls">
+            <button id="swap" class="btn btn-warning" type="button">Swap Players</button>
+            <button class="btn btn-primary submitButton">Update</button>
+          </div>
+          <span id='changedInfo' class='applied'>✅ Applied</span>
+        </form>
+      </div>
     </div>
 
-    <div id="inputs">
-      <form action="">
-        <div id="p1Inputs" class="playerInputs">
-          <label>Player 1</label>
-          <input id="p1Name" class="name" type="text" autocomplete="off" placeholder="Name" />
-          <input id="p1Score" class="score" type="text" autocomplete="off" placeholder="Score" />
-        </div>
-        <div id="p2Inputs" class="playerInputs">
-          <label>Player 2</label>
-          <input id="p2Name" class="name" type="text" autocomplete="off" placeholder="Name" />
-          <input id="p2Score" class="score" type="text" autocomplete="off" placeholder="Score" />
-        </div>
-        <button class="submitButton">Update</button>
-        <span id='changedInfo'></span>
-      </form>
-        <button id="swap">Swap Players</button>
+    <div id="playerList" class="grid-item">
+      <div id="uriLoad">
+        <input id="urlInput" type="text" autocomplete="off" placeholder="Smash.gg/Challonge Bracket URL">
+        <button class="urlSubmit">Load Bracket</button>
+      </div>
+      <div id="list">
+        <input id="listFilter" type="text" placeholder="Name Filter">
+        <table id="listPlayers" class="table table-hover table-dark table-borderless table-sm align-middle">
+          <tbody>
+            <tr class="listEntry">
+              <td class="listName" spellcheck="false" contenteditable="true">Player A</td>
+              <td>
+                <div class="listButtons">
+                  <button data-fill-target="input#p1Name" class="btn btn-primary btn-sm listFill"
+                    type="button">P1</button>
+                  <button data-fill-target="input#p2Name" class="btn btn-secondary btn-sm listFill"
+                    type="button">P2</button>
+                  <button class="btn btn-danger btn-sm remove" type="button">Remove</button>
+                </div>
+              </td>
+            </tr>
+            <tr class="listEntry">
+              <td class="listName" spellcheck="false" contenteditable="true">Player B</td>
+              <td>
+                <div class="listButtons">
+                  <button data-fill-target="input#p1Name" class="btn btn-primary btn-sm listFill"
+                    type="button">P1</button>
+                  <button data-fill-target="input#p2Name" class="btn btn-secondary btn-sm listFill"
+                    type="button">P2</button>
+                  <button class="btn btn-danger btn-sm remove" type="button">Remove</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-success add" type="button">Add Player</button>
+      </div>
+    </div>
+
+    <div id="instructions" class="grid-item">
+      <h1>Instructions</h1>
+      <h2>OBS</h2>
+      <p>
+        Create a new Browser Source with the following settings:</br>
+        URL: <a id="viewer" href="viewer" target="_blank">viewer</a></br>
+        Width: 1280</br>
+        Height: 720</br>
+      </p>
     </div>
   </div>
-  <div id="instructions">
-    <h1>Instructions</h1>
-    <h2>OBS</h2>
-    <p>
-      Create a new Browser Source with the following settings:</br>
-      URL: <a id="viewer" href="viewer" target="_blank">viewer</a></br>
-      Width: 1280</br>
-      Height: 720</br>
-    </p>
-  </div>
+
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   <script src="connect.js"></script>
   <script src="viewer.js"></script>
   <script src="controller.js"></script>

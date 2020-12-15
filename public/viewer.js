@@ -19,5 +19,12 @@ function showPlayers() {
 function updatePlayers(data) {
   for (const element in data) {
     $('#' + element).text(data[element]);
-  }
+    // Shift score to center on multi-digit scores
+    if (element == "p1Score") {
+      $('#' + element).css('left', (525 - 6 * (data[element].length - 1)) + 'px');
+    }
+    if (element == "p2Score") {
+      $('#' + element).css('right', (525 - 6 * (data[element].length - 1)) + 'px');
+    }
+}
 }

@@ -3,35 +3,58 @@
 }
 
 body {
-  background: #303030;
+  background: linear-gradient(90deg, rgba(155, 37, 73, 1) 0%, rgba(17, 7, 57, 1) 14%, rgba(17, 7, 57, 1) 86%, rgba(155, 37, 73, 1) 100%);
+  background-repeat: repeat-y;
   font: 12px Helvetica, Arial;
-  margin: 0;
+  color: #ffffff;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  min-width: 1000px;
+}
+
+/* For any viewports less than 1000px wide */
+
+@media (max-width: 1000px) {
+  body {
+    background-size: 1000px;
+    /* Force the image to its minimum width */
+  }
 }
 
 body#viewer {
+  background: rgba(0, 0, 0, 0);
   background-color: rgba(0, 0, 0, 0);
+  margin-top: 0px;
   overflow: hidden;
 }
 
-#instructions {
-  background: rgb(170, 170, 170);
-  font-size: 16px;
-  margin-top: 50px;
+#logo {
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+}
+
+#logo img {
+  display: block;
+}
+
+.grid {
+  max-width: 810px;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.grid-item {
   padding: 10px;
-  width: 500px;
+  width: 400px;
+  margin-bottom: 10px;
+  float: left;
 }
 
 #controls {
-  background: rgb(170, 170, 170);
-  padding: 10px;
-  margin-top: 250px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  width: 400px;
+  background: #303030;
+  border-radius: 0.3rem;
 }
 
 #controlButtons {
@@ -41,10 +64,9 @@ body#viewer {
 
 .controlButton {
   cursor: default;
-  background: rgb(130, 224, 255);
   border: none;
   margin: 0px 10px 10px 10px;
-  padding: 10px;
+  border-radius: 0.3rem;
 }
 
 #inputs {
@@ -52,72 +74,119 @@ body#viewer {
   justify-content: center;
 }
 
-.playerInputs {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0%);
+#inputs label {
+  font-size: 16px;
+}
+
+.name {
+  width: 200px;
 }
 
 .score {
-  width: 50px;
+  width: 40px;
 }
 
-.submitButton {
+.increment {
+  user-select: none;
+}
+
+.decrement {
+  user-select: none;
+}
+
+.updateControls {
+  display: flex;
+  justify-content: center;
   margin-top: 10px;
-  position: relative;
-  left: 64%;
-  transform: translate(-50%, 0%);
 }
 
-#swap {
-  position: relative;
-  height: 42px;
-  margin-left: 10px;
-  width: 60px;
+.updateControls button {
+  margin-right: 10px;
 }
 
 #changedInfo {
-  position: relative;
-  left: 0%;
+  display: flex;
+  justify-content: center;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .pending {
-  color: #fadb2d;
+  color: #f39c12;
 }
 
 .applied {
-  color: #009607;
+  color: #00bc8c;
 }
 
 .selected {
   font-weight: bold;
 }
 
+#instructions {
+  background: #303030;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 0.3rem;
+}
+
+#instructions h1 {
+  margin-top: 0px;
+}
+
+#instructions a {
+  color: #20c997;
+}
+
+#playerList {
+  background: #303030;
+  min-height: 134px;
+  border-radius: 0.3rem;
+}
+
+#uriLoad {
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+#urlInput {
+  width: 225px;
+}
+
+#listPlayers {
+  --bs-table-bg: #303030;
+  
+}
+
 .scaleable-wrapper {
-  top: 0;
-  left: 0;
-  resize: both;
-  position: fixed;
-  background: #666;
-  width: 100%;
-  height: 200px;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-image: url(tekken7-preview.png);
+  width: 800px;
+  height: 100px;
+  border-radius: 0.3rem;
 }
 
 #previewTitle {
-  font-weight: bold;
+  font-weight: 900;
   font-size: 20px;
   position: absolute;
   text-align: center;
   bottom: 0;
   width: 100%;
-  color: #e6a800;
+  color: #f39c12;
 }
 
 .topOverlay {
   height: 41px;
   width: 1280px;
-  position: fixed;
+  position: relative;
   z-index: 1;
   top: -41px;
   left: 0;
@@ -136,7 +205,7 @@ body#viewer {
   position: absolute;
   color: #ebebeb;
   display: inline-block;
-  transition: 0.3s;
+  text-align: center;
 }
 
 #players span#p1Name {
@@ -153,4 +222,25 @@ body#viewer {
 
 #players span#p2Score {
   right: 525px;
+}
+
+.listName {
+  font-size: 16px;
+}
+
+.listButtons {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 0;
+  height: 31px;
+  transition: .3s;
+}
+
+.listButtons button{
+  margin-right: 10px;
+}
+
+.listSelected {
+  width: 100%
 }
