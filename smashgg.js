@@ -30,9 +30,13 @@ async function runQuery(query, variables) {
       authorization: 'Bearer ' + smashToken,
     },
   });
-  const data = await graphQLClient.request(query, variables)
-
-  return data; // exit async
+  try {
+    const data = await graphQLClient.request(query, variables)
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+  return false;
 };
 
 async function getPlayersFromPhaseGroup(id) {
