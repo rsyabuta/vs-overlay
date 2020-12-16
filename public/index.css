@@ -39,6 +39,19 @@ body#viewer {
   display: block;
 }
 
+#joinPanel {
+  width: 600px;
+  display: flex;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto; 
+  justify-content: center;
+}
+
+#joinPanel #generate {
+  margin-right: 10px
+}
+
 .grid {
   max-width: 910px;
   margin-left: auto;
