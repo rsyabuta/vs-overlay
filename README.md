@@ -10,6 +10,7 @@ Features:
 * Player names can be imported from smash.gg or challonge brackets.
 
 Feature demonstration:
+
 [![Features](https://img.youtube.com/vi/E0Te4srMtGc/0.jpg)](https://www.youtube.com/watch?v=E0Te4srMtGc)
 
 Hosted version: https://overlay.blastcity.net
