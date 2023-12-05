@@ -1,4 +1,4 @@
-# vs-overylay
+# vs-overlay
 
 ## Overview
 
