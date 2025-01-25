@@ -102,6 +102,12 @@ body#viewer {
   font-size: 16px;
 }
 
+.titleName {
+  width: 200px;
+  margin-left: 28px;
+  margin-bottom: 10px;
+}
+
 .name {
   width: 200px;
 }
@@ -220,38 +226,54 @@ body#viewer {
   z-index: 1;
   top: -41px;
   left: 0;
-  background-image: url(tekken-versus-overlay.png);
+  background-image: url(player-versus-overlay.png);
   overflow: hidden;
   transition: top 0.4s;
   transform-origin: left top;
+  display: grid;
+  grid-template-columns: [lmargin] 210px [p1Name] 270px [p1Score] 60px [lgap] 40px [title] 115px [rgap] 40px [p2Score] 60px [p2Name] 270px [rmargin]  210px;
 }
 
 .topOverlay span {
   font-size: 25px;
-  font-variant: small-caps;
+  font-family: Consolas, monaco, monospace;
+  /* font-variant: small-caps; */
   font-weight: bold;
   text-decoration: none;
   padding: 4px;
-  position: absolute;
+  /* position: absolute; */
   color: #ebebeb;
-  display: inline-block;
+  /* display: inline-block; */
   text-align: center;
+  align-self: center;
+  white-space: nowrap;
 }
 
-#players span#p1Name {
-  left: 190px;
+#overlay span#title {
+  text-align: center;
+  font-size: 12px;
+  grid-column: title;
+  align-self: start;
 }
 
-#players span#p1Score {
-  left: 525px;
+#overlay span#p1Name {
+  /* left: 220px; */
+  grid-column: p1Name;
 }
 
-#players span#p2Name {
-  right: 190px;
+#overlay span#p1Score {
+  /* left: 510px; */
+  grid-column: p1Score;
 }
 
-#players span#p2Score {
-  right: 525px;
+#overlay span#p2Name {
+  /* right: 220px; */
+  grid-column: p2Name;
+}
+
+#overlay span#p2Score {
+  /* right: 510px; */
+  grid-column: p2Score;
 }
 
 .listName {
@@ -259,18 +281,12 @@ body#viewer {
 }
 
 .listButtons {
-  overflow: hidden;
   display: flex;
-  justify-content: center;
-  width: 0;
+  justify-content: right;
   height: 31px;
-  transition: .3s;
+  width: 100%
 }
 
 .listButtons button{
   margin-right: 10px;
-}
-
-.listSelected {
-  width: 100%
 }

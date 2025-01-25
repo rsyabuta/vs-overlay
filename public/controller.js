@@ -1,20 +1,18 @@
 $(function () {
-  socket.on('update players', function (data) {
-    if (!data["default"]) {
-      for (const element in data["players"]) {
-        $('input#' + element).val(data["players"][element]);
+  socket.on('update overlay', function (data) {
+      for (const element in data["overlay"]) {
+        $('input#' + element).val(data["overlay"][element]);
       }
-    }
   });
 
   $('#show').click(function () {
-    socket.emit('show players', { room: room });
+    socket.emit('show overlay', { room: room });
     $('#controlButtons>button').removeClass("selected");
     $('#show').addClass("selected");
   });
 
   $('#hide').click(function () {
-    socket.emit('hide players', { room: room });
+    socket.emit('hide overlay', { room: room });
     $('#controlButtons>button').removeClass("selected");
     $('#hide').addClass("selected");
   });
@@ -23,12 +21,12 @@ $(function () {
     var data = {}
     data["room"] = room;
     data["default"] = false;
-    data["players"] = {};
+    data["overlay"] = {};
     $('form input[type=text]').each(function (i) {
       var input = $(this)
-      data["players"][input.attr('id')] = input.val();
+      data["overlay"][input.attr('id')] = input.val();
     });
-    socket.emit('update players', data);
+    socket.emit('update overlay', data);
     $('#changedInfo').removeClass('pending').addClass('applied');
     $('#changedInfo').text('✅ Applied');
     return false;
@@ -105,6 +103,7 @@ $(function () {
   });
 
   $(".listName").keypress(function (e) {
+    // enter key
     return e.which != 13;
   });
 
@@ -156,8 +155,8 @@ function parseBracketURL(url) {
   const domain = hostArray.slice(-2).join('.')
   
   var service = "invalid";
-  if (domain == "smash.gg") {
-    service = "smash.gg";
+  if (domain == "start.gg") {
+    service = "start.gg";
   } else if (domain == "challonge.com") {
     service = "challonge";
     if (subdomain != "challonge") {

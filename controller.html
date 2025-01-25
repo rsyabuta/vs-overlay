@@ -14,9 +14,10 @@
     <img src="versus-overlay-logo.png">
   </div>
   <div class="scaleable-wrapper" id="scaleable-wrapper">
-    <div id="players" class="topOverlay">
+    <div id="overlay" class="topOverlay">
       <span id="p1Name"></span>
       <span id="p1Score"></span>
+      <span id="title"></span>
       <span id="p2Score"></span>
       <span id="p2Name"></span>
     </div>
@@ -32,6 +33,10 @@
 
       <div id="inputs">
         <form action="">
+          <div class="titleInput">
+            <label>Title</lablel>
+            <input id="title" class="titleName" type="text" autocomplete="off" />
+          </div>
           <div class="playerControls">
             <div class="inputs">
               <div id="p1Inputs" class="playerInputs">

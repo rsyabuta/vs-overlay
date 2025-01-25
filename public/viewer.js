@@ -1,30 +1,31 @@
 $(function () {
-  socket.on('show players', function () {
-    showPlayers();
+  socket.on('show overlay', function () {
+    showOverlay();
   });
-  socket.on('hide players', function () {
-    hidePlayers();
+  socket.on('hide overlay', function () {
+    hideOverlay();
   });
-  socket.on('update players', function (data) {
-    updatePlayers(data.players);
-    console.log('update players:', data);
+  socket.on('update overlay', function (data) {
+    updateOverlay(data.overlay);
+    console.log('update overlay:', data);
   });
 });
-function hidePlayers() {
-  $('#players').css('top', '-41px');
+function hideOverlay() {
+  $('#overlay').css('top', '-41px');
 }
-function showPlayers() {
-  $('#players').css('top', '0px');
+function showOverlay() {
+  $('#overlay').css('top', '0px');
 }
-function updatePlayers(data) {
+function updateOverlay(data) {
   for (const element in data) {
     $('#' + element).text(data[element]);
-    // Shift score to center on multi-digit scores
-    if (element == "p1Score") {
-      $('#' + element).css('left', (525 - 6 * (data[element].length - 1)) + 'px');
-    }
-    if (element == "p2Score") {
-      $('#' + element).css('right', (525 - 6 * (data[element].length - 1)) + 'px');
+    // Change font size on long player names
+    if (element == "p1Name" || element == "p2Name") {
+      if (data[element].length > 16 ) {
+        $('#' + element).css('font-size', (30 -  0.45 * (data[element].length)) + 'px');
+      } else {
+        $('#' + element).css('font-size', '');
+      }
     }
 }
 }

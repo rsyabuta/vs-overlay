@@ -7,7 +7,7 @@
 Features:
 * Web based controls for updating player names and score counts.
 * Player names can be saved in a list and assigned to player 1 and player 2 locations for quick updating.
-* Player names can be imported from smash.gg or challonge brackets.
+* Player names can be imported from start.gg or challonge brackets.
 
 Feature demonstration:
 

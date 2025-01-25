@@ -1,5 +1,5 @@
 
-var $el = $("#players");
+var $el = $("#overlay");
 var elHeight = $el.outerHeight();
 var elWidth = $el.outerWidth();
 
