@@ -11,7 +11,7 @@ $(function () {
   });
 });
 function hideOverlay() {
-  $('#overlay').css('top', '-41px');
+  $('#overlay').css('top', '-62px');
 }
 function showOverlay() {
   $('#overlay').css('top', '0px');
@@ -22,7 +22,7 @@ function updateOverlay(data) {
     // Change font size on long player names
     if (element == "p1Name" || element == "p2Name") {
       if (data[element].length > 16 ) {
-        $('#' + element).css('font-size', (30 -  0.45 * (data[element].length)) + 'px');
+        $('#' + element).css('font-size', (43 -  0.55 * (data[element].length)) + 'px');
       } else {
         $('#' + element).css('font-size', '');
       }

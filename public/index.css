@@ -220,22 +220,31 @@ body#viewer {
 }
 
 .topOverlay {
-  height: 41px;
-  width: 1280px;
+  height: 62px;
+  width: 1920px;
   position: relative;
   z-index: 1;
-  top: -41px;
+  top: -62px;
   left: 0;
   background-image: url(player-versus-overlay.png);
   overflow: hidden;
   transition: top 0.4s;
   transform-origin: left top;
   display: grid;
-  grid-template-columns: [lmargin] 145px [p1Name] 300px [p1Score] 65px [lgap] 50px [title] 160px [rgap] 50px [p2Score] 65px [p2Name] 300px [rmargin] 145px;
+  grid-template-columns: 
+    [lmargin] 238px 
+    [p1Name] 442px 
+    [p1Score] 80px 
+    [lgap] 80px 
+    [title] 240px 
+    [rgap] 80px 
+    [p2Score] 80px 
+    [p2Name] 442px 
+    [rmargin] 238px;
 }
 
 .topOverlay span {
-  font-size: 25px;
+  font-size: 38px;
   font-family: Consolas, monaco, monospace;
   /* font-variant: small-caps; */
   font-weight: bold;
@@ -251,7 +260,7 @@ body#viewer {
 
 #overlay span#title {
   text-align: center;
-  font-size: 12px;
+  font-size: 19px;
   grid-column: title;
   align-self: start;
 }
