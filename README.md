@@ -32,6 +32,10 @@ You must have nodejs installed in the environment that is running `vs-overlay`. 
 
 1. Run the server using `node index.js`. The server should be running on port `3000`. You can access it at http://localhost:3000
 
+#### Running in Docker
+
+You can also build a docker image to run the webserver or use a pre-built container available in the [packages page](https://github.com/rsyabuta/vs-overlay/pkgs/container/vs-overlay)
+
 ### Adding to OBS
 
 1. Access the vs-overlay webapp and enter an overlay id or generate a random one.
