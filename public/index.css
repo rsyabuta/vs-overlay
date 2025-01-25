@@ -231,7 +231,7 @@ body#viewer {
   transition: top 0.4s;
   transform-origin: left top;
   display: grid;
-  grid-template-columns: [lmargin] 210px [p1Name] 270px [p1Score] 60px [lgap] 40px [title] 115px [rgap] 40px [p2Score] 60px [p2Name] 270px [rmargin]  210px;
+  grid-template-columns: [lmargin] 145px [p1Name] 300px [p1Score] 65px [lgap] 50px [title] 160px [rgap] 50px [p2Score] 65px [p2Name] 300px [rmargin] 145px;
 }
 
 .topOverlay span {
